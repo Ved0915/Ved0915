@@ -5,7 +5,7 @@ import { createServer } from 'node:http';
 import { extname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { chromium, type Page } from 'playwright-core';
-import { projects } from './data.ts';
+import { featured, projects } from './data.ts';
 
 type Job = { name: string; url: string; selector: string; fps?: number };
 
@@ -22,14 +22,11 @@ const jobs: Job[] = [
   brand === 'personal' ? { name: 'hero', url: '/scripts/hero/hero.html?dpr=1.25', selector: '#hero', fps: 20 } : { name: 'hero', url: card('ohero'), selector: '.card', fps: 12 },
   { name: 'tiles', url: card('tiles'), selector: '.card' },
   { name: 'work', url: card('strip'), selector: '.card' },
-  ...projects.map((p) => ({ name: `work-${p.slug}`, url: card('work', `&slug=${p.slug}`), selector: '.card' })),
+  ...projects.filter((p) => featured.includes(p.slug)).map((p) => ({ name: `work-${p.slug}`, url: card('work', `&slug=${p.slug}`), selector: '.card' })),
+  { name: 'more', url: card('more'), selector: '.card' },
   { name: 'ship', url: card('ship'), selector: '.card', fps: 12 },
-  ...(brand === 'personal'
-    ? [
-        { name: 'toolkit', url: card('toolkit'), selector: '.card' },
-        { name: 'activity', url: card('activity', `&dpr=${DPR}`), selector: '.card', fps: 12 },
-      ]
-    : []),
+  { name: 'toolkit', url: card('toolkit'), selector: '.card' },
+  ...(brand === 'personal' ? [{ name: 'activity', url: card('activity', `&dpr=${DPR}`), selector: '.card', fps: 12 }] : []),
   { name: 'footer', url: card('footer'), selector: '.card' },
 ].filter((j) => !only.length || only.some((o) => j.name === o || j.name.startsWith(`${o}-`)));
 

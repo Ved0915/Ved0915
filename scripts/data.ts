@@ -77,6 +77,11 @@ export const contact = {
   },
   org: {
     email: 'itsolutions@balanceview.in',
+    phone: '+91 82006 82062',
+    whatsapp: 'https://wa.me/918200682062',
     site: 'https://www.balanceview.in/it-services',
   },
 };
+
+// Shown as full cards, in this order; every other project goes in the compact "More work" card.
+export const featured = ['balanceview', 'panchal', 'superfast', 'hdstudio', 'grocery', 'radiocode'];

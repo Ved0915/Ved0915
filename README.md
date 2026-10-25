@@ -13,6 +13,12 @@
 
 <img src="assets/tiles.webp" width="100%" alt="What I build. Web applications: Laravel 12 and 13 with Inertia, React 19 or Vue 3. Custom CMS builds and PWAs. Filament admin panels: Role-based access, media libraries, settings, activity logs, backups, charts and Excel exports. Backend and APIs: REST APIs, Sanctum auth, queues and jobs, caching, schema and query tuning. E-commerce: Storefronts with role-based back offices and analytics. WordPress: Custom themes and plugin work, WooCommerce and Elementor sites. Testing and delivery: Pest, Playwright smoke tests, Larastan, Pint and CI-gated deploys on GitHub Actions.">
 
+<img src="assets/toolkit.webp" width="100%" alt="Toolkit. Backend: PHP, Laravel, Filament, Livewire, MySQL, Redis, Composer. Frontend: TypeScript, React, Vue, Inertia, Tailwind, Vite, Astro. Testing, delivery: Pest, Playwright, Larastan, Actions, Docker, Git, Cloudflare. CMS: WordPress, WooCommerce, Elementor, Bootstrap, Hostinger.">
+
+<img src="assets/ship.webp" width="100%" alt="How I ship. git push (branch + PR), then Pint (code style), then Larastan (static analysis), then Pest (tests), then Playwright (real browser), then Deploy (after green CI), then Live check (pages + headers).">
+
+<img src="assets/activity.webp" width="100%" alt="Activity: 1937 contributions on 137 active days in the last year, longest streak 13 days, busiest day 108 on 25 Sept 2026. Counts include private client repositories.">
+
 <img src="assets/work.webp" width="100%" alt="Selected work. 13 live sites for real clients. The code stays in a private org.">
 
 <p align="center">
@@ -21,38 +27,15 @@
 </p>
 
 <p align="center">
-<a href="https://mahalifepaths.in"><img src="assets/work-mahalifepaths.webp" width="49%" alt="Maha Life Paths: Vedic astrology, numerology and vastu consultancy with service and enquiry flows. Built with Laravel 12, Filament 5, Inertia 2, React 19."></a>
-<a href="https://margdestination.com"><img src="assets/work-margdestination.webp" width="49%" alt="Marg Destination: Travel and tour operator with enquiry and booking flows. Built with Laravel 12, Filament 5, Inertia 2, React 19."></a>
-</p>
-
-<p align="center">
-<img src="assets/work-wages.webp" width="49%" alt="Wages App: Payroll and wage management with role-based permissions, activity logging and reporting dashboards. Built with Laravel 13, Filament 5, Inertia 2, React 19.">
 <a href="https://superfast.balanceview.in"><img src="assets/work-superfast.webp" width="49%" alt="SuperFast Roadways: Freight company site and operations app with Excel exports, rebuilt from a legacy Laravel 5.7 + Vue 2 codebase. Built with Laravel 12, Filament 5, Livewire."></a>
-</p>
-
-<p align="center">
-<a href="https://uniquepalace.balanceview.in"><img src="assets/work-uniquepalace.webp" width="49%" alt="Unique Palace: Gift store for birthdays, anniversaries and festivals, with a back office: menu builder, roles, activity log and scheduled backups. Built with Laravel 13, Filament 5, Inertia 3, React 19."></a>
-<a href="https://grocerystore.balanceview.in"><img src="assets/work-grocery.webp" width="49%" alt="Grocery Store: Online store and back office with role-based permissions and analytics charts. Built with Laravel 12, Filament 5, Inertia 2, React 19."></a>
-</p>
-
-<p align="center">
 <a href="https://hdstudio.co.in"><img src="assets/work-hdstudio.webp" width="49%" alt="HD Studio: Drone photography, videography and survey studio in Ahmedabad. Built with Astro 7, TypeScript, Tailwind 4, GSAP."></a>
+</p>
+
+<p align="center">
+<a href="https://grocerystore.balanceview.in"><img src="assets/work-grocery.webp" width="49%" alt="Grocery Store: Online store and back office with role-based permissions and analytics charts. Built with Laravel 12, Filament 5, Inertia 2, React 19."></a>
 <a href="https://radiocodess.com"><img src="assets/work-radiocode.webp" width="49%" alt="Radio Code: Car radio unlock-code platform: public site, admin back office, API and several connected apps. Built with Laravel, Blade, Vue, MySQL."></a>
 </p>
 
-<p align="center">
-<a href="https://margmigration.com"><img src="assets/work-margmigration.webp" width="49%" alt="Marg Migration: Immigration consultancy covering six countries and several visa categories. Built with WordPress, Custom theme."></a>
-<a href="https://scarlettplanners.com"><img src="assets/work-scarlett.webp" width="49%" alt="Scarlett Planners: Event planning studio site. Built with WordPress, Elementor, Custom theme."></a>
-</p>
-
-<p align="center">
-<a href="https://vizdesign.balanceview.in"><img src="assets/work-vizdesign.webp" width="49%" alt="Viz Design Solutions: Interior design studio site, Ahmedabad. Built with PHP, Bootstrap."></a>
-</p>
-
-<img src="assets/ship.webp" width="100%" alt="How I ship. git push (branch + PR), then Pint (code style), then Larastan (static analysis), then Pest (tests), then Playwright (real browser), then Deploy (after green CI), then Live check (pages + headers).">
-
-<img src="assets/toolkit.webp" width="100%" alt="Toolkit. Backend: PHP, Laravel, Filament, Livewire, MySQL, Redis, Composer. Frontend: TypeScript, React, Vue, Inertia, Tailwind, Vite, Astro. Testing, delivery: Pest, Playwright, Larastan, Actions, Docker, Git, Cloudflare. CMS: WordPress, WooCommerce, Elementor, Bootstrap, Hostinger.">
-
-<img src="assets/activity.webp" width="100%" alt="Activity: 1937 contributions on 137 active days in the last year, longest streak 13 days, busiest day 108 on 25 Sept 2026. Counts include private client repositories.">
+<img src="assets/more.webp" width="100%" alt="More work: Maha Life Paths (Consultancy, Laravel 12, Filament 5, Inertia 2, React 19); Marg Destination (Travel, Laravel 12, Filament 5, Inertia 2, React 19); Wages App (Payroll, admin only, Laravel 13, Filament 5, Inertia 2, React 19); Unique Palace (Gift shop, Laravel 13, Filament 5, Inertia 3, React 19); Marg Migration (WordPress, WordPress, Custom theme); Scarlett Planners (WordPress, WordPress, Elementor, Custom theme); Viz Design Solutions (Static PHP, PHP, Bootstrap).">
 
 <img src="assets/footer.webp" width="100%" alt="Open to freelance and contract work. vedprakash12.vd@gmail.com, +91 82006 82062, balanceview.in/it-services.">

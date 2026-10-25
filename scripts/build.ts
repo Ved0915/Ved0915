@@ -4,7 +4,7 @@ import { resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import * as simpleIcons from 'simple-icons';
 import { summarize } from './activity-data.ts';
-import { contact, orgServices, personalBuild, projects, shipSteps, toolkit } from './data.ts';
+import { contact, featured, orgServices, personalBuild, projects, shipSteps, toolkit } from './data.ts';
 
 const root = fileURLToPath(new URL('..', import.meta.url));
 const orgIndex = process.argv.indexOf('--org');
@@ -52,8 +52,10 @@ const cards = {
     tiles: { title: 'What we do', subtitle: 'Seven areas, one team, around ten direct clients.', items: orgServices.map((t) => ({ ...t, logos: t.logos.map(([s, l]) => [use(s), l]) })) },
     work: { title: 'Live work', subtitle: `${projects.length} sites we built and run. Client code stays private.` },
     ship: { title: 'How we ship', subtitle: 'Every change passes the same gates before it reaches a client.' },
-    footer: { lines: ['Talk to the', 'IT team.'], rows: [[use('gmail'), contact.org.email], [use('googlechrome'), 'balanceview.in/it-services']] },
+    toolkit: { title: 'Tech we use', subtitle: 'The tools behind every project.' },
+    footer: { lines: ['Talk to the', 'IT team.'], rows: [[use('gmail'), contact.org.email], [use('whatsapp'), contact.org.phone], [use('googlechrome'), 'balanceview.in/it-services']] },
   },
+  more: { title: 'More work', subtitle: 'Other client projects, in brief.', slugs: projects.filter((p) => !featured.includes(p.slug)).map((p) => p.slug) },
   icons: {} as Record<string, { title: string; path: string }>,
 };
 for (const slug of wanted) if (icons[slug]) cards.icons[slug] = icons[slug];
@@ -73,7 +75,11 @@ function readme(brandKey: 'personal' | 'org'): string {
   const b = cards[brandKey];
   const colors: [string, string] = isOrg ? ['16183A', '4F46B5'] : ['0C2228', '0F766E'];
   const badges = isOrg
-    ? [badge('Website', 'balanceview.in', 'googlechrome', contact.org.site, colors), badge('Email', contact.org.email, 'gmail', `mailto:${contact.org.email}`, colors)]
+    ? [
+        badge('Website', 'balanceview.in', 'googlechrome', contact.org.site, colors),
+        badge('Email', contact.org.email, 'gmail', `mailto:${contact.org.email}`, colors),
+        badge('WhatsApp', contact.org.phone, 'whatsapp', contact.org.whatsapp, colors),
+      ]
     : [
         badge('Website', 'balanceview.in', 'googlechrome', contact.personal.site, colors),
         badge('Email', contact.personal.email, 'gmail', `mailto:${contact.personal.email}`, colors),
@@ -84,9 +90,11 @@ function readme(brandKey: 'personal' | 'org'): string {
     ? 'BalanceView IT services from Ahmedabad: software development, security reviews and cloud hosting. You get the full source code of what we build.'
     : 'Vedprakash Dhaka, full-stack engineer in Ahmedabad. I build Laravel and React apps for businesses, and the pipelines that ship them safely. Open to freelance and contract work.';
   const tilesAlt = `${b.tiles.title}. ${b.tiles.items.map((t) => `${t.title}: ${t.text}`).join(' ')}`;
+  const shown = featured.map((slug) => projects.find((p) => p.slug === slug)).filter((p) => p !== undefined);
+  const rest = projects.filter((p) => !featured.includes(p.slug));
   const pairs: string[] = [];
-  for (let i = 0; i < projects.length; i += 2) {
-    const pair = projects.slice(i, i + 2).map((p) => {
+  for (let i = 0; i < shown.length; i += 2) {
+    const pair = shown.slice(i, i + 2).map((p) => {
       const text = isOrg && p.orgText ? p.orgText : p.text;
       const tile = img(`work-${p.slug}.webp`, `${p.name}: ${text} Built with ${p.stack.join(', ')}.`, '49%');
       return p.url ? `<a href="${p.url}">${tile}</a>` : tile;
@@ -100,16 +108,16 @@ function readme(brandKey: 'personal' | 'org'): string {
     // Plain text as well as the images, so the key facts are selectable and searchable.
     `<p align="center">${esc(isOrg ? 'BalanceView builds websites, web apps, APIs, mobile apps and business software for companies across India, from Ahmedabad. You get the full source code of what we build.' : 'Full-stack engineer in Ahmedabad. I build Laravel and React apps for businesses, with Filament back offices, and the CI pipelines that ship them safely. Open to freelance and contract work.')}</p>`,
     img('tiles.webp', tilesAlt),
-    img('work.webp', `${b.work.title}. ${b.work.subtitle}`),
-    ...pairs,
+    img('toolkit.webp', `${b.toolkit.title}. ${toolkit.map((g) => `${g.group}: ${g.items.map(([, l]) => l).join(', ')}`).join('. ')}.`),
     img('ship.webp', `${b.ship.title}. ${shipSteps.map((s) => `${s.name} (${s.note})`).join(', then ')}.`),
   ];
   if (!isOrg) {
-    blocks.push(img('toolkit.webp', `Toolkit. ${toolkit.map((g) => `${g.group}: ${g.items.map(([, l]) => l).join(', ')}`).join('. ')}.`));
     blocks.push(
       img('activity.webp', `Activity: ${activity.total} contributions on ${activity.activeDays} active days in the last year, longest streak ${activity.longestStreak} days, busiest day ${activity.busiest.count} on ${activity.busiest.label}. Counts include private client repositories.`),
     );
   }
+  blocks.push(img('work.webp', `${b.work.title}. ${b.work.subtitle}`), ...pairs);
+  blocks.push(img('more.webp', `More work: ${rest.map((p) => `${p.name} (${p.kind}, ${p.stack.join(', ')})`).join('; ')}.`));
   blocks.push(img('footer.webp', `${b.footer.lines.join(' ')} ${b.footer.rows.map(([, t]) => t).join(', ')}.`));
   return `${blocks.join('\n\n')}\n`;
 }

@@ -154,6 +154,18 @@ pre.mock { margin: 0; padding: 14px 16px; font: 500 13px/1.6 JBMono, monospace; 
 .browser img { display: block; width: 100%; height: calc(100% - 22px); object-fit: cover; object-position: top; }
 .browser::after { content: ''; position: absolute; inset: 0; background: linear-gradient(115deg, rgb(255 255 255 / .16), transparent 35%); pointer-events: none; }
 
+/* More work */
+.more { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 30px; }
+.mrow { padding: 18px 20px; display: flex; flex-direction: column; gap: 8px; }
+.mhead { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+.mhead b { font-weight: 800; font-size: 21px; letter-spacing: -0.02em; }
+.mhead .kind { font-weight: 600; font-size: 13px; color: var(--p); display: flex; align-items: center; gap: 6px; white-space: nowrap; }
+.mhead .kind i { width: 6px; height: 6px; border-radius: 50%; background: var(--p); }
+.mrow p { margin: 0; font-weight: 500; font-size: 14.5px; line-height: 1.45; color: var(--muted); }
+.mfoot { margin-top: auto; display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.mfoot .logos { display: flex; flex-wrap: wrap; gap: 6px; }
+.mfoot .domain { font: 500 12px JBMono, monospace; color: var(--faint); white-space: nowrap; }
+
 /* Section header strip */
 .strip { padding: 44px 60px 46px; }
 .strip .rule { margin-top: 26px; height: 2px; border-radius: 2px; background: linear-gradient(90deg, var(--p), rgb(var(--a-rgb) / .6) 55%, transparent); }
