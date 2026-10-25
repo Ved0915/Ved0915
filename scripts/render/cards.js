@@ -81,6 +81,17 @@ const cards = {
       <div class="domain">${p.domain ? esc(p.domain) : 'Private admin app'}</div>${logos(p.stackLogos)}</div>
       <div class="browser"><div class="bar"><i></i><i></i><i></i></div>${p.hasShot ? `<img src="/assets/shots/${p.slug}.webp" alt="">` : p.domain ? MOCKS.window() : MOCKS.panel()}</div></section>`;
   },
+  more: () => {
+    const rows = data.more.slugs.map((slug) => data.projects.find((p) => p.slug === slug));
+    return `<section class="card"><h2>${esc(data.more.title)}</h2><p class="sub">${esc(data.more.subtitle)}</p>
+      <div class="more">${rows
+        .map((p) => {
+          const text = brand === 'org' && p.orgText ? p.orgText : p.text;
+          return `<div class="mrow glass"><div class="mhead"><b>${esc(p.name)}</b><span class="kind"><i></i>${esc(p.kind)}</span></div><p>${esc(text)}</p>
+            <div class="mfoot">${logos(p.stackLogos)}<span class="domain">${p.domain ? esc(p.domain) : 'Private admin app'}</span></div></div>`;
+        })
+        .join('')}</div></section>`;
+  },
   ship: () => `<section class="card"><h2>${esc(B.ship.title)}</h2><p class="sub">${esc(B.ship.subtitle)}</p>
     <div class="pipe"><div class="track"></div><div class="pulse"></div><div class="steps">${data.ship
       .map((s, i) => `<div class="step"><div class="node glass" style="animation-delay:${(i * 6.02) / 7}s">${svgLogo(s.logo) || `<span class="line">${lineIcon(s.icon)}</span>`}</div><b>${esc(s.name)}</b><span>${esc(s.note)}</span></div>`)
@@ -136,7 +147,7 @@ if (q.get('card') === 'activity') {
   window.renderAt = (t) => anims.forEach((a) => (a.currentTime = t * 1000));
 }
 // Any clipped text block fails the render instead of shipping overlapping or cut-off copy.
-const clipped = [...document.querySelectorAll('.work-copy, .tile, .stat, .contact, .step, .key')].find((el) => el.scrollHeight > el.clientHeight + 1 || el.scrollWidth > el.clientWidth + 1);
+const clipped = [...document.querySelectorAll('.work-copy, .tile, .stat, .contact, .step, .key, .mrow')].find((el) => el.scrollHeight > el.clientHeight + 1 || el.scrollWidth > el.clientWidth + 1);
 window.layoutError = clipped
   ? `text overflows in .${clipped.className.split(' ')[0]} (${clipped.scrollWidth}x${clipped.scrollHeight} > ${clipped.clientWidth}x${clipped.clientHeight}): "${clipped.textContent.trim().slice(0, 60)}"`
   : '';
