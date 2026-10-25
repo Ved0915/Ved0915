@@ -22,7 +22,7 @@ const jobs: Job[] = [
   brand === 'personal' ? { name: 'hero', url: '/scripts/hero/hero.html?dpr=1.25', selector: '#hero', fps: 20 } : { name: 'hero', url: card('ohero'), selector: '.card', fps: 12 },
   { name: 'tiles', url: card('tiles'), selector: '.card' },
   { name: 'work', url: card('strip'), selector: '.card' },
-  ...projects.filter((p) => featured.includes(p.slug)).map((p) => ({ name: `work-${p.slug}`, url: card('work', `&slug=${p.slug}`), selector: '.card' })),
+  ...projects.filter((p) => featured.includes(p.slug)).map((p) => ({ name: `work-${p.slug}`, url: card('work', `&slug=${p.slug}`), selector: '.tile-pad' })),
   { name: 'more', url: card('more'), selector: '.card' },
   { name: 'ship', url: card('ship'), selector: '.card', fps: 12 },
   { name: 'toolkit', url: card('toolkit'), selector: '.card' },

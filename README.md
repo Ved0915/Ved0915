@@ -21,20 +21,7 @@
 
 <img src="assets/work.webp" width="100%" alt="Selected work. 13 live sites for real clients. The code stays in a private org.">
 
-<p align="center">
-<a href="https://www.balanceview.in"><img src="assets/work-balanceview.webp" width="49%" alt="BalanceView: Company platform on a custom CMS: page builder, service catalogue, project showcase, settings-driven theming, PWA. Built with Laravel 13, Filament 5, Inertia 3, Vue 3."></a>
-<a href="https://www.panchalinterior.in"><img src="assets/work-panchal.webp" width="49%" alt="Panchal Interior: ISO 9001 certified civil contractor: waterproofing, industrial fabrication, ACP glazing and interiors. Built with Laravel 12, Filament 5, Inertia 2, React 19."></a>
-</p>
-
-<p align="center">
-<a href="https://superfast.balanceview.in"><img src="assets/work-superfast.webp" width="49%" alt="SuperFast Roadways: Freight company site and operations app with Excel exports, rebuilt from a legacy Laravel 5.7 + Vue 2 codebase. Built with Laravel 12, Filament 5, Livewire."></a>
-<a href="https://hdstudio.co.in"><img src="assets/work-hdstudio.webp" width="49%" alt="HD Studio: Drone photography, videography and survey studio in Ahmedabad. Built with Astro 7, TypeScript, Tailwind 4, GSAP."></a>
-</p>
-
-<p align="center">
-<a href="https://grocerystore.balanceview.in"><img src="assets/work-grocery.webp" width="49%" alt="Grocery Store: Online store and back office with role-based permissions and analytics charts. Built with Laravel 12, Filament 5, Inertia 2, React 19."></a>
-<a href="https://radiocodess.com"><img src="assets/work-radiocode.webp" width="49%" alt="Radio Code: Car radio unlock-code platform: public site, admin back office, API and several connected apps. Built with Laravel, Blade, Vue, MySQL."></a>
-</p>
+<p align="center"><a href="https://www.balanceview.in"><img src="assets/work-balanceview.webp" width="50%" alt="BalanceView: Company platform on a custom CMS: page builder, service catalogue, project showcase, settings-driven theming, PWA. Built with Laravel 13, Filament 5, Inertia 3, Vue 3."></a><a href="https://www.panchalinterior.in"><img src="assets/work-panchal.webp" width="50%" alt="Panchal Interior: ISO 9001 certified civil contractor: waterproofing, industrial fabrication, ACP glazing and interiors. Built with Laravel 12, Filament 5, Inertia 2, React 19."></a><br><a href="https://superfast.balanceview.in"><img src="assets/work-superfast.webp" width="50%" alt="SuperFast Roadways: Freight company site and operations app with Excel exports, rebuilt from a legacy Laravel 5.7 + Vue 2 codebase. Built with Laravel 12, Filament 5, Livewire."></a><a href="https://hdstudio.co.in"><img src="assets/work-hdstudio.webp" width="50%" alt="HD Studio: Drone photography, videography and survey studio in Ahmedabad. Built with Astro 7, TypeScript, Tailwind 4, GSAP."></a><br><a href="https://grocerystore.balanceview.in"><img src="assets/work-grocery.webp" width="50%" alt="Grocery Store: Online store and back office with role-based permissions and analytics charts. Built with Laravel 12, Filament 5, Inertia 2, React 19."></a><a href="https://radiocodess.com"><img src="assets/work-radiocode.webp" width="50%" alt="Radio Code: Car radio unlock-code platform: public site, admin back office, API and several connected apps. Built with Laravel, Blade, Vue, MySQL."></a></p>
 
 <img src="assets/more.webp" width="100%" alt="More work: Maha Life Paths (Consultancy, Laravel 12, Filament 5, Inertia 2, React 19); Marg Destination (Travel, Laravel 12, Filament 5, Inertia 2, React 19); Wages App (Payroll, admin only, Laravel 13, Filament 5, Inertia 2, React 19); Unique Palace (Gift shop, Laravel 13, Filament 5, Inertia 3, React 19); Marg Migration (WordPress, WordPress, Custom theme); Scarlett Planners (WordPress, WordPress, Elementor, Custom theme); Viz Design Solutions (Static PHP, PHP, Bootstrap).">
 

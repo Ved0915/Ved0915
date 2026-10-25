@@ -77,9 +77,9 @@ const cards = {
   work: () => {
     const p = data.projects.find((pr) => pr.slug === q.get('slug'));
     const text = brand === 'org' && p.orgText ? p.orgText : p.text;
-    return `<section class="card work"><div class="work-copy"><div class="kind"><i></i>${esc(p.kind)}</div><h3>${esc(p.name)}</h3><p>${esc(text)}</p>
+    return `<div class="tile-pad"><section class="card work"><div class="work-copy"><div class="kind"><i></i>${esc(p.kind)}</div><h3>${esc(p.name)}</h3><p>${esc(text)}</p>
       <div class="domain">${p.domain ? esc(p.domain) : 'Private admin app'}</div>${logos(p.stackLogos)}</div>
-      <div class="browser"><div class="bar"><i></i><i></i><i></i></div>${p.hasShot ? `<img src="/assets/shots/${p.slug}.webp" alt="">` : p.domain ? MOCKS.window() : MOCKS.panel()}</div></section>`;
+      <div class="browser"><div class="bar"><i></i><i></i><i></i></div>${p.hasShot ? `<img src="/assets/shots/${p.slug}.webp" alt="">` : p.domain ? MOCKS.window() : MOCKS.panel()}</div></section></div>`;
   },
   more: () => {
     const rows = data.more.slugs.map((slug) => data.projects.find((p) => p.slug === slug));

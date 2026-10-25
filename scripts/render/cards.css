@@ -154,6 +154,9 @@ pre.mock { margin: 0; padding: 14px 16px; font: 500 13px/1.6 JBMono, monospace; 
 .browser img { display: block; width: 100%; height: calc(100% - 22px); object-fit: cover; object-position: top; }
 .browser::after { content: ''; position: absolute; inset: 0; background: linear-gradient(115deg, rgb(255 255 255 / .16), transparent 35%); pointer-events: none; }
 
+/* Transparent margin baked into each project tile: GitHub strips CSS, so the image carries the gap. */
+.tile-pad { padding: 12px; width: fit-content; }
+
 /* More work */
 .more { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 30px; }
 .mrow { padding: 18px 20px; display: flex; flex-direction: column; gap: 8px; }
